@@ -2,9 +2,8 @@ package logic;
 
 import gui.MyGui;
 import observer.Observer;
-import observer.Subject;
 
-public class Ball extends Player implements Runnable, Subject {
+public class Ball extends Player {
 	private int x;
 	private boolean up, left = false;;
 
@@ -39,7 +38,7 @@ public class Ball extends Player implements Runnable, Subject {
 			left = true;
 
 		}
-		x--;
+		x -= 2;
 
 	}
 
@@ -47,7 +46,7 @@ public class Ball extends Player implements Runnable, Subject {
 		if (x > MyGui.WIDTH - 20) {
 			left = false;
 		}
-		x++;
+		x += 2;
 
 	}
 

@@ -14,12 +14,12 @@ public class MyGui extends JFrame implements KeyListener, Subject, Observer {
 	/**
 	 * 
 	 */
-	
+
 	private JPanel panel;
 	private JLabel pl1, enemy, ball;
 	private ArrayList<Observer> observers;
 	public static final int WIDTH = 500, HEIGHT = 300;
-	
+
 	public MyGui() {
 
 		observers = new ArrayList<Observer>();
@@ -27,7 +27,7 @@ public class MyGui extends JFrame implements KeyListener, Subject, Observer {
 		panel = new JPanel();
 		panel.setLayout(null);
 		panel.setBackground(Color.DARK_GRAY);
-		panel.setBounds(0,0,WIDTH,HEIGHT);
+		panel.setBounds(0, 0, WIDTH, HEIGHT);
 
 		pl1 = new JLabel();
 		pl1.setOpaque(true);
@@ -56,7 +56,7 @@ public class MyGui extends JFrame implements KeyListener, Subject, Observer {
 		add(panel);
 		addKeyListener(this);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(WIDTH, HEIGHT+21);
+		setSize(WIDTH, HEIGHT + 21);
 		setVisible(true);
 
 	}
@@ -115,7 +115,7 @@ public class MyGui extends JFrame implements KeyListener, Subject, Observer {
 	public void update(int y) {
 		// TODO update player coordinates
 		pl1.setLocation(0, y);
-		
+
 	}
 
 	@Override
@@ -129,6 +129,12 @@ public class MyGui extends JFrame implements KeyListener, Subject, Observer {
 	@Override
 	public void update(KeyEvent key) {
 		// TODO this method don't need here
+
+	}
+
+	@Override
+	public void updateEnemy(int y) {
+		enemy.setLocation(480, y);
 
 	}
 

@@ -7,4 +7,5 @@ public interface Observer {
 	public void update(int y);
 	public void update(int x,int y);
 	public void update(KeyEvent key);
+	public void updateEnemy(int y);
 }

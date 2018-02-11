@@ -1,7 +1,5 @@
 package observer;
 
-import java.awt.event.KeyEvent;
-
 public interface PlayerObserver extends Observer {
 	/*
 	 * /(non-Javadoc)
@@ -17,11 +15,16 @@ public interface PlayerObserver extends Observer {
 	}
 	@Override
 	default void update(int x, int y) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 	@Override
 	default void update(int y) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	default void updateEnemy(int y) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -3,23 +3,21 @@ package logic;
 import gui.MyGui;
 
 public class Main {
-	private Player player;
+	private Player player, enemy, ball;
 	private MyGui gui;
-	private Ball ball;
-	private Thread t;
 
 	public Main() {
-
 		player = new Player();
-		
+		enemy = new Enemy();
 		gui = new MyGui();
 		ball = new Ball();
-		t = new Thread(ball);
+
 		player.addObserver(gui);
 		ball.addObserver(gui);
+		ball.addObserver(enemy);
+		enemy.addObserver(gui);
 		gui.addObserver(player);
-		t.start();
-		
+
 	}
 
 	public static void main(String[] args) {
