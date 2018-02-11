@@ -1,4 +1,4 @@
-import logic.Player;
+package logic;
 
 public class Enemy extends Player {
 
