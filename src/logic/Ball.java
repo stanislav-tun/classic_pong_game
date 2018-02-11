@@ -1,23 +1,20 @@
 package logic;
 
-import java.util.ArrayList;
-
 import gui.MyGui;
 import observer.Observer;
 import observer.Subject;
 
-public class Ball implements Runnable, Subject {
-	private int x, y;
-	private ArrayList<Observer> observers;
+public class Ball extends Player implements Runnable, Subject {
+	private int x;
 	private boolean up, left = false;;
 
 	public Ball() {
+		super();
 		x = 250;
 		y = 150;
-		observers = new ArrayList<Observer>();
-
 	}
-
+	
+	@Override
 	public void moveUp() {
 		if (y <= 0) {
 			up = true;
@@ -26,7 +23,7 @@ public class Ball implements Runnable, Subject {
 		y--;
 
 	}
-
+	@Override
 	public void moveDown() {
 		if (y >= MyGui.HEIGHT-20) {
 			up = false;
@@ -79,17 +76,6 @@ public class Ball implements Runnable, Subject {
 
 	}
 
-	@Override
-	public void addObserver(Observer o) {
-		observers.add(o);
-
-	}
-
-	@Override
-	public void deleteObserver(Observer o) {
-		observers.remove(o);
-
-	}
 
 	@Override
 	public void notifyObserver() {

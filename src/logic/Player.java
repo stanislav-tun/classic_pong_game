@@ -6,9 +6,9 @@ import observer.Observer;
 import observer.PlayerObserver;
 import observer.Subject;
 
-public class Player extends Thread implements Subject, PlayerObserver,Runnable {
-	private ArrayList<Observer> observers;
-	private int y;
+public class Player extends Thread implements Subject, PlayerObserver {
+	protected ArrayList<Observer> observers;
+	protected int y;
 
 	public Player() {
 		observers = new ArrayList<Observer>();
@@ -60,11 +60,6 @@ public class Player extends Thread implements Subject, PlayerObserver,Runnable {
 		}
 
 	}
-	@Override
-	public void run() {
-		// TODO Auto-generated method stub
-		super.run();
-		
-	}
+	
 
 }
