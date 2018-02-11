@@ -27,10 +27,10 @@ public class Player extends Thread implements Subject, PlayerObserver {
 	}
 
 	public void moveDown() {
-		if (y >= MyGui.WIDTH - 60) {
-			y = MyGui.WIDTH - 60;
+		if (y >= MyGui.HEIGHT - 60) {
+			y = MyGui.HEIGHT - 60;
 		} else {
-			y -= 3;
+			y += 3;
 		}
 	}
 
