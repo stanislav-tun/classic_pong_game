@@ -2,6 +2,8 @@ package logic;
 
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+
+import gui.MyGui;
 import observer.Observer;
 import observer.PlayerObserver;
 import observer.Subject;
@@ -16,13 +18,20 @@ public class Player extends Thread implements Subject, PlayerObserver {
 	}
 
 	public void moveUp() {
-		y-=3;
-		System.out.println("up "+y);
+		if (y <= 0) {
+			y = 0;
+		} else {
+			y -= 3;
+		}
+
 	}
 
 	public void moveDown() {
-		y+=3;
-		System.out.println("down "+y);
+		if (y >= MyGui.WIDTH - 60) {
+			y = MyGui.WIDTH - 60;
+		} else {
+			y -= 3;
+		}
 	}
 
 	@Override
@@ -50,7 +59,7 @@ public class Player extends Thread implements Subject, PlayerObserver {
 		switch (key.getKeyCode()) {
 		case KeyEvent.VK_UP:
 			moveUp();
-			//оповещаем графику о изменении положения игрока
+			// оповещаем графику о изменении положения игрока
 			notifyObserver();
 			break;
 		case KeyEvent.VK_DOWN:
@@ -60,6 +69,5 @@ public class Player extends Thread implements Subject, PlayerObserver {
 		}
 
 	}
-	
 
 }

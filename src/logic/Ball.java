@@ -13,7 +13,7 @@ public class Ball extends Player implements Runnable, Subject {
 		x = 250;
 		y = 150;
 	}
-	
+
 	@Override
 	public void moveUp() {
 		if (y <= 0) {
@@ -23,9 +23,10 @@ public class Ball extends Player implements Runnable, Subject {
 		y--;
 
 	}
+
 	@Override
 	public void moveDown() {
-		if (y >= MyGui.HEIGHT-20) {
+		if (y >= MyGui.HEIGHT - 20) {
 			up = false;
 
 		}
@@ -43,7 +44,7 @@ public class Ball extends Player implements Runnable, Subject {
 	}
 
 	public void moveRight() {
-		if (x > MyGui.WIDTH-20) {
+		if (x > MyGui.WIDTH - 20) {
 			left = false;
 		}
 		x++;
@@ -75,7 +76,6 @@ public class Ball extends Player implements Runnable, Subject {
 		}
 
 	}
-
 
 	@Override
 	public void notifyObserver() {
