@@ -24,7 +24,7 @@ public class Main {
 		
 		ball.startThread();
 		enemy.startThread();
-		//player.startThread();
+		player.startThread();
 	
 	}
 

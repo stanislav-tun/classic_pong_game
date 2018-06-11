@@ -6,4 +6,5 @@ public interface IObserver {
 	public void updateEnemy(int y);
 	public void update(boolean up, boolean left);
 	
+	
 }

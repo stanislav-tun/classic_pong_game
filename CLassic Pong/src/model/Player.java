@@ -1,6 +1,5 @@
 package model;
 
-import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -11,7 +10,21 @@ public class Player extends Behavior implements KeyListener {
 		super();
 	}
 	
-
+	@Override
+	public void run() {
+		/* this method fixed problem with key delay 
+		 * and makes movement of player more smoothly */
+		for(;;) {
+			try {
+				Thread.sleep(5);
+			} catch (InterruptedException e) {
+				// TODO: handle exception
+			}
+			move(dy);
+			notifyObserver();
+		}
+		
+	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
@@ -25,13 +38,13 @@ public class Player extends Behavior implements KeyListener {
 		int key = e.getKeyCode();
 		if (key == KeyEvent.VK_UP) {
 			dy = -1;
-			move(dy);
+			//move(dy);
 		}
 		if (key == KeyEvent.VK_DOWN) {
 			dy = 1;
-			move(dy);
+			//move(dy);
 		}
-		notifyObserver();
+		
 	}
 	
 

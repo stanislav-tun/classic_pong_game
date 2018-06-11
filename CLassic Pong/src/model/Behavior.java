@@ -54,7 +54,10 @@ public abstract class Behavior implements Move, ISubject, Runnable {
 		// TODO Auto-generated method stub
 		
 	}
-
+	/* this method was created just for reduction of creating thread object
+	 * in main class. Now no need to start each Thread object, just create new
+	 * Player or another class extended from Behavior and call this method to 
+	 * start thread */
 	public void startThread() {
 		thread = new Thread(this);
 		thread.start();
