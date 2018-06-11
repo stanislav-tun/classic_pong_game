@@ -38,11 +38,11 @@ public class Player extends Behavior implements KeyListener {
 		int key = e.getKeyCode();
 		if (key == KeyEvent.VK_UP) {
 			dy = -1;
-			//move(dy);
+			
 		}
 		if (key == KeyEvent.VK_DOWN) {
 			dy = 1;
-			//move(dy);
+			
 		}
 		
 	}
