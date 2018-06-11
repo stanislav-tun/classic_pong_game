@@ -2,7 +2,7 @@ package model;
 
 import model.observer.IObserver;
 
-public class Ball extends Behavior implements Runnable{
+public class Ball extends Behavior {
 	
 	private int x, dx;
 	private boolean left = false, up = false;
@@ -41,7 +41,7 @@ public class Ball extends Behavior implements Runnable{
 		// TODO Auto-generated method stub
 		for (;;) {
 			try {
-				Thread.sleep(7);
+				Thread.sleep(10);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -66,13 +66,8 @@ public class Ball extends Behavior implements Runnable{
 			//notify gui
 			o.updateBall(x, y);
 			//notify enemy
-			o.update(up);
+			o.update(up, left);
 		}
-	}
-	@Override
-	public void startThread() {
-		thread = new Thread(this);
-		thread.start();
 	}
 	
 	

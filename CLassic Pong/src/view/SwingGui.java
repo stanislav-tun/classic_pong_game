@@ -60,7 +60,7 @@ public class SwingGui extends JFrame implements IObserver {
 	}
 
 	@Override
-	public void update(boolean up) {
+	public void update(boolean up, boolean left) {
 		// TODO Auto-generated method stub
 		// not in use in this class need to fix this logic error
 	}

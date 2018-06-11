@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import model.observer.IObserver;
 import model.observer.ISubject;
 
-public abstract class Behavior implements Move, ISubject {
+public abstract class Behavior implements Move, ISubject, Runnable {
 
 	protected int y, dy;
 	protected ArrayList<IObserver> observers;
@@ -49,9 +49,15 @@ public abstract class Behavior implements Move, ISubject {
 		}
 
 	}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
 
 	public void startThread() {
-
+		thread = new Thread(this);
+		thread.start();
 	}
 
 }

@@ -22,9 +22,10 @@ public class Main {
 		player.signUpObserver(gui);
 		ball.signUpObserver(enemy);
 		
-		//player.startThread();
-		enemy.startThread();
 		ball.startThread();
+		enemy.startThread();
+		//player.startThread();
+	
 	}
 
 	public static void main(String[] args) {
